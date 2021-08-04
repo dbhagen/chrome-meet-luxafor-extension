@@ -1,5 +1,5 @@
 {
-  "name": "@jpoehnelt/chrome-meet-webhook-extension",
+  "name": "chrome-google-meet-luxafor-extension",
   "version": "1.0.0",
   "description": "Trigger a webhook when the microphone or camera is turned on or off in a Google Meet.",
   "keywords": [
@@ -7,16 +7,16 @@
     "meet",
     "webhook"
   ],
-  "homepage": "https://github.com/jpoehnelt/chrome-meet-webhook-extension",
+  "homepage": "https://github.com/dbhagen/chrome-meet-luxafor-extension",
   "bugs": {
-    "url": "https://github.com/jpoehnelt/chrome-meet-webhook-extension/issues"
+    "url": "https://github.com/dbhagen/chrome-meet-luxafor-extension/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jpoehnelt/chrome-meet-webhook-extension.git"
+    "url": "https://github.com/dbhagen/chrome-meet-luxafor-extension.git"
   },
   "license": "Apache-2.0",
-  "author": "Justin Poehnelt",
+  "author": "Daniel B. Hagen",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -25,11 +25,14 @@
     "lint": "eslint src/*",
     "build": "rollup -c",
     "test": "jest src/*",
+    "watch": "rollup -c -w",
     "package": "zip dist/chrome-meet-webhook-extension.zip dist/*.js public/* manifest.json"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.9",
     "@babel/runtime-corejs3": "^7.14.9",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@types/chrome": "0.0.151",
     "@types/jest": "^26.0.24",
     "@types/selenium-webdriver": "^4.0.15",
@@ -43,12 +46,20 @@
     "prettier": "^2.3.2",
     "rollup": "^2.55.1",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-chrome-extension": "^3.5.7",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-zip": "^1.0.2",
+    "rollup-plugin-zip-encryptable": "0.0.5",
     "selenium-webdriver": "^4.0.0-beta.4",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@extend-chrome/messages": "^1.2.2",
+    "@types/firefox-webext-browser": "^82.0.1"
+  }
 }

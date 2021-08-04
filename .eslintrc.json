@@ -16,15 +16,15 @@
     ],
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/ban-ts-ignore": "warn",
-    "@typescript-eslint/camelcase": "warn",
-    "@typescript-eslint/class-name-casing": "error",
+    // "@typescript-eslint/ban-ts-ignore": "warn",
+    // "@typescript-eslint/camelcase": "warn",
+    // "@typescript-eslint/class-name-casing": "error",
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       { "allowExpressions": true }
     ],
     "@typescript-eslint/func-call-spacing": ["error", "never"],
-    "@typescript-eslint/generic-type-naming": ["error", "^[A-Z][A-Za-z]*$"],
+    // "@typescript-eslint/generic-type-naming": ["error", "^[A-Z][A-Za-z]*$"],
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-empty-interface": "error",
     "@typescript-eslint/no-explicit-any": "warn",
@@ -48,11 +48,13 @@
   "parserOptions": {
     "ecmaVersion": 9,
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".html"]
   },
   "env": {
     "browser": true,
     "es6": true,
     "jest/globals": true
-  }
+  },
+  "ignorePatterns": ["dist/**/*"]
 }

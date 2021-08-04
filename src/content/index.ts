@@ -6,4 +6,4 @@ const runner = new Runner({
   delay: 1000,
 });
 
-runner.start();
+runner.start().catch((reason) => console.error("[chrome-meet-webhook-extension]", reason));

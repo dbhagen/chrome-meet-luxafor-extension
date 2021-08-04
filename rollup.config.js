@@ -1,43 +1,34 @@
-/**
- * Copyright 2020 Justin Poehnelt
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// rollup.config.js
 
-import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
+// import { rollup } from 'rollup'
+
 import typescript from "rollup-plugin-typescript2";
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import del from 'rollup-plugin-delete'
+import zipEncryptable from 'rollup-plugin-zip-encryptable'
 
-const babelOptions = {
-  extensions: [".js", ".ts"],
-};
 
-export default [
-  {
-    input: "src/index.ts",
-    plugins: [typescript(), commonjs(), babel(babelOptions)],
-    output: {
-      file: "dist/index.js",
-      format: "iife",
-    },
+import {
+  chromeExtension,
+  simpleReloader,
+} from 'rollup-plugin-chrome-extension'
+
+export default {
+  input: 'src/manifest.json',
+  output: {
+    dir: 'dist',
+    format: 'esm',
   },
-  {
-    input: "src/options.ts",
-    plugins: [typescript(), commonjs(), babel(babelOptions), terser()],
-    output: {
-      file: "dist/options.js",
-      format: "iife",
-    },
-  },
-];
+  plugins: [
+    del({ targets: 'dist/*'}),
+    // always put chromeExtension() before other plugins
+    chromeExtension({ browserPolyfill: true }),
+    simpleReloader(),
+    // the plugins below are optional
+    typescript(),
+    resolve(),
+    commonjs(),
+    zipEncryptable({ zlib: { level: 9 } }),
+  ],
+}
