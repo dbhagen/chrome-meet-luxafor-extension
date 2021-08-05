@@ -1,4 +1,4 @@
-# Chrome Meet Webhook Extension
+# Chrome Meet Luxafor Extension
 
 ![Build](https://github.com/dbhagen/chrome-meet-luxafor-extension/workflows/Build/badge.svg)
 ![Release](https://github.com/dbhagen/chrome-meet-luxafor-extension/workflows/Release/badge.svg)
