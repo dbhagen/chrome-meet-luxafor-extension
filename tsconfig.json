@@ -5,7 +5,10 @@
     "sourceMap": false,
     "esModuleInterop": true,
     "lib": ["DOM", "ESNext"],
-    "target": "ES6"
+    "target": "ES6",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": ["src/**/*"],
   "exclude": ["dist/**/*"]

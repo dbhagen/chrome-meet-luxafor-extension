@@ -5,27 +5,9 @@ export const CONFIG_STORAGE_KEY = "config";
 export const HTTP_METHODS = ["GET", "HEAD", "POST", "PATCH", "PUT"];
 
 export type Events =
-  | "change"
-  | "input.change"
-  | "input.active"
-  | "input.inactive"
-  | "input.camera.change"
-  | "input.camera.active"
-  | "input.camera.inactive"
-  | "input.microphone.change"
-  | "input.microphone.active"
   | "input.microphone.inactive";
 
 export const EVENTS = [
-  "change",
-  "input.change",
-  "input.active",
-  "input.inactive",
-  "input.camera.change",
-  "input.camera.active",
-  "input.camera.inactive",
-  "input.microphone.change",
-  "input.microphone.active",
   "input.microphone.inactive",
 ];
 

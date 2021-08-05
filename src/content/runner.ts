@@ -45,8 +45,10 @@ export function getInputState(document: HTMLDocument): InputState {
   return { microphone: "inactive", camera: "inactive" };
 }
 
+type RunnerOptionsCallback = (state: State) => void
+
 export interface RunnerOptions {
-  callback?: (state: State) => void;
+  callback?: RunnerOptionsCallback
   delay?: number;
 }
 
@@ -59,10 +61,12 @@ export class Runner implements RunnerOptions {
       microphone: "unknown",
     },
   };
-  current: State;
+  current: State = this.previous;
   delay: number;
   callback?: (state: State) => void | null;
-  config: Config;
+  config: Config = {
+    webhooks: {}
+  };
 
   constructor({ delay = 1000, callback }: RunnerOptions) {
     this.delay = delay;
