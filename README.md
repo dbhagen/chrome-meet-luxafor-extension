@@ -1,8 +1,8 @@
 # Chrome Meet Webhook Extension
 
-![Build](https://github.com/jpoehnelt/chrome-meet-webhook-extension/workflows/Build/badge.svg)
-![Release](https://github.com/jpoehnelt/chrome-meet-webhook-extension/workflows/Release/badge.svg)
-[![codecov](https://codecov.io/gh/jpoehnelt/chrome-meet-webhook-extension/branch/master/graph/badge.svg)](https://codecov.io/gh/jpoehnelt/chrome-meet-webhook-extension)
+![Build](https://github.com/dbhagen/chrome-meet-luxafor-extension/workflows/Build/badge.svg)
+![Release](https://github.com/dbhagen/chrome-meet-luxafor-extension/workflows/Release/badge.svg)
+[![codecov](https://codecov.io/gh/dbhagen/chrome-meet-luxafor-extension/branch/master/graph/badge.svg)](https://codecov.io/gh/dbhagen/chrome-meet-luxafor-extension)
 
 ## Description
 
